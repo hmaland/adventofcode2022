@@ -18,15 +18,13 @@
          
         public int Part1()
         {
-            var input = File.ReadAllLines(@"day2\input.txt");
             var sum = 0;
-            foreach(var line in input)
+            foreach (var line in File.ReadAllLines(@"day2\input.txt"))
             {
-                // A Y
                 if (string.IsNullOrEmpty(line)) continue;
-
-                var other = Map(line.Split(' ')[0]);
-                var me = Map(line.Split(' ')[1]);
+                // A Y
+                var other = MapFigure(line.Split(' ')[0]);
+                var me = MapFigure(line.Split(' ')[1]);
 
                 sum += GetMatchPoint(other, me);
                 sum += GetFigurePoint(me);
@@ -36,20 +34,43 @@
 
         public int Part2()
         {
-            var input = File.ReadAllLines(@"day2\input.txt");
             var sum = 0;
-            foreach (var line in input)
+            foreach (var line in File.ReadAllLines(@"day2\input.txt"))
             {
-                // A Y
                 if (string.IsNullOrEmpty(line)) continue;
-
-                var other = Map(line.Split(' ')[0]);
+                // A Y
+                var other = MapFigure(line.Split(' ')[0]);
                 var outcome = MapOutcome(line.Split(' ')[1]);
                 var me = SelectFigure(other, outcome);
                 sum += GetMatchPoint(other, me);
                 sum += GetFigurePoint(me);
             }
             return sum;
+        }
+
+        private Figure MapFigure(string letter)
+        {
+            switch (letter)
+            {
+                case "A":
+                case "X":
+                    return Figure.Rock;
+                case "B":
+                case "Y":
+                    return Figure.Paper;
+                default:
+                    return Figure.Scissor;
+            }
+        }
+
+        private Outcome MapOutcome(string code)
+        {
+            if (code == "X")
+                return Outcome.Loss;
+            else if (code == "Y")
+                return Outcome.Draw;
+            else
+                return Outcome.Victory;
         }
 
         private Figure SelectFigure(Figure other, Outcome outcome)
@@ -77,16 +98,6 @@
             }
         }
 
-        private Outcome MapOutcome(string code)
-        {
-            if (code == "X")
-                return Outcome.Loss;
-            else if (code == "Y")
-                return Outcome.Draw;
-            else
-                return Outcome.Victory;
-        }
-
         private int GetMatchPoint(Figure other, Figure me)
         {
             if (other == me)
@@ -97,21 +108,6 @@
                 return other == Figure.Scissor ? 0 : 6;
             else // Scissor
                 return other == Figure.Rock ? 0 : 6;
-        }
-
-        private Figure Map(string letter)
-        {
-            switch (letter)
-            {
-                case "A":
-                case "X":
-                    return Figure.Rock;
-                case "B":
-                case "Y":
-                    return Figure.Paper;
-                default:
-                    return Figure.Scissor;
-            }
         }
 
         private int GetFigurePoint(Figure figure)
