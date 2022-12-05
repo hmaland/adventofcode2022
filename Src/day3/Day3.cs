@@ -1,12 +1,14 @@
 ﻿namespace adventofcode2022
 {
-    internal class Day3
+    public class Day3 : PuzzleBase
     {
-        
+        public Day3(string file): base(file) { }
+        public Day3(string[] lines) : base(lines) { }
+
         public int Part1()
         {
             var sum = 0;
-            foreach (var line in File.ReadAllLines(@"day3\input.txt"))
+            foreach (var line in Lines)
             {
                 if (string.IsNullOrEmpty(line)) continue;
                 var half = line.Length / 2;
@@ -21,12 +23,11 @@
         public int Part2()
         {
             var sum = 0;
-            var l = File.ReadAllLines(@"day3\input.txt");
-            for (var i = 0; i < l.Length; i += 3)
+            for (var i = 0; i < Lines.Length; i += 3)
             {
-                var l1 = l[i].ToCharArray();
-                var l2 = l[i + 1].ToCharArray();
-                var l3 = l[i + 2].ToCharArray();
+                var l1 = Lines[i].ToCharArray();
+                var l2 = Lines[i + 1].ToCharArray();
+                var l3 = Lines[i + 2].ToCharArray();
                 var c = l1.Where(x => l2.Contains(x) && l3.Contains(x)).First();
                 sum += GetPriority(c);
             }

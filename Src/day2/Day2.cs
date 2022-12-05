@@ -1,6 +1,6 @@
 ﻿namespace adventofcode2022
 {
-    internal class Day2
+    public class Day2 : PuzzleBase
     {
         enum Figure
         {
@@ -15,11 +15,14 @@
             Draw,
             Victory
         }
+
+        public Day2(string file) : base(file) { }
+        public Day2(string[] lines) : base(lines) { }
          
         public int Part1()
         {
             var sum = 0;
-            foreach (var line in File.ReadAllLines(@"day2\input.txt"))
+            foreach (var line in Lines)
             {
                 if (string.IsNullOrEmpty(line)) continue;
                 // A Y
@@ -35,7 +38,7 @@
         public int Part2()
         {
             var sum = 0;
-            foreach (var line in File.ReadAllLines(@"day2\input.txt"))
+            foreach (var line in Lines)
             {
                 if (string.IsNullOrEmpty(line)) continue;
                 // A Y
