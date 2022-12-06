@@ -233,5 +233,43 @@ move 1 from 1 to 2".ToLines();
             Assert.Equal("MCD", result);
         }
 
+        [Theory()]
+        [InlineData("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 7)]
+        [InlineData("bvwbjplbgvbhsrlpgdmjqwftvncz", 5)]
+        [InlineData("nppdvjthqldpwncqszvftbrmjlhg", 6)]
+        [InlineData("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", 10)]
+        [InlineData("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 11)]
+        public void Day6_Part1(string input, int expected)
+        {
+
+            // Arrange
+            var puzzle = new Day6(new string[] { });
+
+            // Act
+            var result = puzzle.Part1(input);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
+        [Theory()]
+        [InlineData("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 19)]
+        [InlineData("bvwbjplbgvbhsrlpgdmjqwftvncz", 23)]
+        [InlineData("nppdvjthqldpwncqszvftbrmjlhg", 23)]
+        [InlineData("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", 29)]
+        [InlineData("zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw", 26)]
+        public void Day6_Part2(string input, int expected)
+        {
+
+            // Arrange
+            var puzzle = new Day6(new string[] { });
+
+            // Act
+            var result = puzzle.Part2(input);
+
+            // Assert
+            Assert.Equal(expected, result);
+        }
+
     }
 }
