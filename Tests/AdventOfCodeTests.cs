@@ -184,5 +184,54 @@ CrZsJsPPZsGzwwsLwLmpwMDw".ToLines();
             // Assert
             Assert.Equal(4, result);
         }
+
+        [Fact]
+        public void Day5_Part1()
+        {
+
+            // Arrange
+            var input =
+@"    [D]    
+[N] [C]    
+[Z] [M] [P]
+ 1   2   3 
+
+move 1 from 2 to 1
+move 3 from 1 to 3
+move 2 from 2 to 1
+move 1 from 1 to 2".ToLines();
+            var puzzle = new Day5(input);
+
+            // Act
+            var result = puzzle.Part1();
+
+            // Assert
+            Assert.Equal("CMZ", result);
+        }
+
+        [Fact]
+        public void Day5_Part2()
+        {
+
+            // Arrange
+            var input =
+@"    [D]    
+[N] [C]    
+[Z] [M] [P]
+ 1   2   3 
+
+move 1 from 2 to 1
+move 3 from 1 to 3
+move 2 from 2 to 1
+move 1 from 1 to 2".ToLines();
+            var puzzle = new Day5(input);
+
+            // Act
+            var result = puzzle.Part2();
+
+            // Assert
+            Assert.Equal("MCD", result);
+        }
+
     }
 }

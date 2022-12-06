@@ -16,6 +16,9 @@ Console.WriteLine("Day 3: Rucksack Reorganization - 2: " + new Day3(@"day3\input
 Console.WriteLine("Day 4: Camp Cleanup - 1: " + new Day4(@"day4\input.txt").Part1());
 Console.WriteLine("Day 4: Camp Cleanup - 2: " + new Day4(@"day4\input.txt").Part2());
 
+Console.WriteLine("Day 5: Supply Stacks - 1: " + new Day5(@"day5\input.txt").Part1());
+Console.WriteLine("Day 5: Supply Stacks - 2: " + new Day5(@"day5\input.txt").Part2());
+
 Console.ReadLine();
 
 
