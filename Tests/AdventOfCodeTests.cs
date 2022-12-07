@@ -271,5 +271,82 @@ move 1 from 1 to 2".ToLines();
             Assert.Equal(expected, result);
         }
 
+
+        [Fact]
+        public void Day7_Part1()
+        {
+
+            // Arrange
+            var input =
+@"$ cd /
+$ ls
+dir a
+14848514 b.txt
+8504156 c.dat
+dir d
+$ cd a
+$ ls
+dir e
+29116 f
+2557 g
+62596 h.lst
+$ cd e
+$ ls
+584 i
+$ cd ..
+$ cd ..
+$ cd d
+$ ls
+4060174 j
+8033020 d.log
+5626152 d.ext
+7214296 k".ToLines();
+            var puzzle = new Day7(input);
+
+            // Act
+            var result = puzzle.Part1();
+
+            // Assert
+            Assert.Equal(95437, result);
+        }
+
+
+        [Fact]
+        public void Day7_Part2()
+        {
+
+            // Arrange
+            var input =
+@"$ cd /
+$ ls
+dir a
+14848514 b.txt
+8504156 c.dat
+dir d
+$ cd a
+$ ls
+dir e
+29116 f
+2557 g
+62596 h.lst
+$ cd e
+$ ls
+584 i
+$ cd ..
+$ cd ..
+$ cd d
+$ ls
+4060174 j
+8033020 d.log
+5626152 d.ext
+7214296 k".ToLines();
+            var puzzle = new Day7(input);
+
+            // Act
+            var result = puzzle.Part2();
+
+            // Assert
+            Assert.Equal(24933642, result);
+        }
     }
 }

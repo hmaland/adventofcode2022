@@ -22,6 +22,9 @@ Console.WriteLine("Day 5: Supply Stacks - 2: " + new Day5(@"day5\input.txt").Par
 Console.WriteLine("Day 6: Tuning Trouble - 1: " + new Day6(@"day6\input.txt").Part1());
 Console.WriteLine("Day 6: Tuning Trouble - 2: " + new Day6(@"day6\input.txt").Part2());
 
+Console.WriteLine("Day 7: No Space Left On Device - 1: " + new Day7(@"day7\input.txt").Part1());
+Console.WriteLine("Day 7: No Space Left On Device - 2: " + new Day7(@"day7\input.txt").Part2());
+
 Console.ReadLine();
 
 
